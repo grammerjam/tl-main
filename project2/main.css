@@ -84,3 +84,43 @@ li {
   margin: 0;
   text-align: center;
 }
+
+.main-2__right h3 {
+  margin: 0.5rem 0;
+  font-size: 2em;
+}
+
+.main-2__left img {
+  width: 100%;
+}
+
+.main-2__right {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+  align-items: center;
+}
+
+.main-2__right ul {
+  width: 90%;
+  margin: 0;
+}
+
+.main-2__right li {
+  padding: 0.5rem 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-2__right__title {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.main-2__right__list-icon {
+  width: 2rem;
+  height: 2rem;
+  margin-right: 1rem;
+}
