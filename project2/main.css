@@ -203,11 +203,14 @@ li {
 @media screen and (min-width: 800px) {
   /* Nav Bar styling */
   .nav-bar {
-    padding: 0 1rem;
+    padding: 2rem 1rem;
     position: relative;
-    align-items: baseline;
+    align-items: center;
+    justify-content: center;
   }
   .nav-bar__left {
+    position: absolute;
+    left: 1rem;
     display: flex;
     align-items: center;
   }
@@ -215,8 +218,20 @@ li {
     padding-right: 0.75rem;
   }
   .nav-bar__middle {
+    align-self: center;
+    font-size: 3rem;
+    margin: 0;
+  }
+
+  .nav-bar__right {
     position: absolute;
-    left: 41vw;
+    right: 1rem;
+  }
+
+  .nav-bar__right li button {
+    padding: 1.5rem 1.5rem;
+    font-size: 1rem;
+    border-radius: 0.5rem;
   }
 
   /* Main 1 styling */
