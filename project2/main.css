@@ -43,6 +43,10 @@ li {
   display: block;
 }
 
+.time-footer {
+  text-align: center;
+}
+
 /* Nav Bar styling */
 .nav-highlight {
   text-align: center;
