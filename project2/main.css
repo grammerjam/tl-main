@@ -1,9 +1,38 @@
 @media screen and (min-width: 800px) {
 }
+/* Color Palette */
+/* dark blue: #748DA6 */
+/* blue: #9CB4CC*/
+/* pink: #F2D7D9 */
+/* purpleish-grey: #D3CEDF */
+
+@font-face {
+  font-family: Avenir Reg;
+  src: url("./assets/fonts/AvenirNextLTPro-Regular.woff2");
+}
+@font-face {
+  font-family: Avenir Demi;
+  src: url("./assets/fonts/AvenirNextLTPro-Demi.woff2");
+}
+@font-face {
+  font-family: Avenir Bold;
+  src: url("./assets/fonts/AvenirNextLTPro-Bold.woff2");
+}
 
 body {
   margin: 0;
   box-sizing: border-box;
+  font-family: Avenir Reg;
+}
+button {
+  font-family: Avenir Reg;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  font-family: Avenir Demi;
 }
 
 ul {
@@ -17,37 +46,62 @@ li {
 .nav-highlight {
   text-align: center;
   padding: 0.5rem;
+  background: #9cb4cc;
+  color: white;
+  font-weight: bold;
+  text-transform: uppercase;
 }
 
 .nav-bar {
   display: flex;
   justify-content: space-between;
+  background: #f2d7d9;
+  color: #748da6;
+  padding: 0 0.25rem;
 }
 
 .nav-bar__left {
   display: none;
 }
-@media screen and (min-width: 800px) {
-  .nav-bar__left {
-    display: flex;
-    justify-content: space-between;
-  }
+
+.nav-bar__middle {
+  font-family: Avenir Demi;
 }
 
 .nav-bar__right {
   display: flex;
   justify-content: space-between;
+  align-items: center;
+}
+
+.nav-bar__right li {
+  padding-left: 0.75rem;
+}
+.nav-bar__right li button {
+  background: #748da6;
+  color: white;
+  border: none;
+  border-radius: 0.25rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 
 .hero {
+  background: #f2d7d9;
 }
 
 .hero-left {
+  color: #748da6;
+  padding: 0 0.25rem;
+}
+
+.hero-left h2 {
+  margin: 0;
 }
 
 .hero-right__img {
   width: 100%;
-  height: 22rem;
+  height: 25rem;
   object-fit: cover;
 }
 
@@ -68,7 +122,7 @@ li {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 1rem;
+  margin-bottom: 2rem;
 }
 
 .main-1__group-icon {
@@ -85,13 +139,19 @@ li {
   text-align: center;
 }
 
+.main-2__left {
+  height: 25rem;
+}
+.main-2__left img {
+  width: 100%;
+  height: 25rem;
+  object-fit: cover;
+  object-position: 50% 0%;
+}
+
 .main-2__right h3 {
   margin: 0.5rem 0;
   font-size: 2em;
-}
-
-.main-2__left img {
-  width: 100%;
 }
 
 .main-2__right {
@@ -123,4 +183,25 @@ li {
   width: 2rem;
   height: 2rem;
   margin-right: 1rem;
+}
+
+/* BreakPoint Styling */
+
+@media screen and (min-width: 800px) {
+  .nav-bar {
+    padding: 0 1rem;
+    position: relative;
+    align-items: baseline;
+  }
+  .nav-bar__left {
+    display: flex;
+    align-items: center;
+  }
+  .nav-bar__left li {
+    padding-right: 0.75rem;
+  }
+  .nav-bar__middle {
+    position: absolute;
+    left: 41vw;
+  }
 }
