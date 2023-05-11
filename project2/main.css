@@ -234,6 +234,25 @@ li {
     border-radius: 0.5rem;
   }
 
+  /* Hero Styling */
+  .hero {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 28rem;
+  }
+
+  .hero-left {
+    width: 40%;
+  }
+
+  .hero-right{
+    width: 30%;
+  }
+  .hero-right img{
+    border-radius: .5rem;
+  }
+
   /* Main 1 styling */
   .main-1__bottom {
     display: flex;
