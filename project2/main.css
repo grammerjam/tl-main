@@ -226,7 +226,14 @@ button.star {
   margin: 2rem;
 }
 
-
+img.carousel {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 1rem;
+  height: 1rem;
+  padding: 1rem;
+}
 
 .main-3__group h4 {
   font-size: 1.25rem;
@@ -383,11 +390,14 @@ button.contact {
   .main-3 {
     display: flex;
     justify-content: space-evenly;
-    gap: 3rem;
+    gap: 1rem;
+    width: 85%;
+    margin-right: auto;
+    margin-left: auto;
   }
 
   .main-3__group {
-    width: 70%;
+    width: 60%;
   }
 
   .grapevine h3 {
@@ -427,15 +437,26 @@ button.contact {
   }
 
   button.contact {
-    margin-left: .1rem;
+    margin-left: .2rem;
+
   }
 
   .hero_contact {
-    top: 60%;
+    top: 65%;
     left: 6%;
   }
 
   .hero_contact img {
-    width: 15%;
+    width: 8%;
+  }
+
+  img.carousel {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 1rem;
+    height: 1rem;
+    padding: 0rem;
+    margin-top: 2.5rem;
   }
 }
