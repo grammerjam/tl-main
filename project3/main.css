@@ -39,6 +39,10 @@ main {
   position: relative;
 }
 
+.main-top {
+  width: 100%;
+}
+
 .main-left__background {
   display: none;
 }
@@ -58,8 +62,11 @@ form {
   position: absolute;
   display: flex;
   flex-direction: column;
-  left: 0;
+  left: 35%;
+  top: 32%;
+  transform: translate(-35%, -32%);
   z-index: 1;
+  width: 18.75rem;
 }
 
 .card-info {
@@ -71,7 +78,7 @@ form {
 .copied-number {
   left: 2rem;
   bottom: 4rem;
-  font-size: 1.5rem;
+  font-size: 1.125rem;
 }
 
 .card-front__bottom {
@@ -92,21 +99,32 @@ form {
 }
 
 .card-back {
-  position: relative;
+  position: absolute;
   display: block;
-  top: -15rem;
+  left: 58%;
+  top: 10%;
+  transform: translate(-55%, -10%);
+  width: 18.75rem;
+}
+
+.card-back__img {
+  width: 100%;
 }
 
 .copied-CVC {
   position: absolute;
   color: white;
-  bottom: 6.5rem;
-  right: 3.5rem;
+  bottom: 8.5vh;
+  right: 9vw;
   font-size: 1rem;
 }
 
 .main-right {
   width: 20rem;
+}
+
+.main-bottom {
+  padding-top: 15vh;
 }
 
 label {
@@ -169,6 +187,10 @@ input {
     position: relative;
   }
 
+  .main-top {
+    width: 25%;
+  }
+
   .main-top__background {
     display: none;
   }
@@ -178,7 +200,7 @@ input {
     z-index: -1;
     position: absolute;
     left: 0;
-    height: 150%;
+    height: 120%;
   }
 
   .card-front {
@@ -186,6 +208,9 @@ input {
     display: flex;
     flex-direction: column;
     padding-top: 6rem;
+    width: 23rem;
+    left: 15%;
+    transform: none;
   }
 
   .copied-number {
@@ -200,7 +225,16 @@ input {
 
   .card-back {
     position: relative;
-    left: 6rem;
+    left: 8rem;
     top: 2rem;
+    width: 23rem;
+    transform: none;
+  }
+  .copied-CVC {
+    position: absolute;
+    color: white;
+    bottom: 5.125rem;
+    right: 3.5rem;
+    font-size: 1rem;
   }
 }
