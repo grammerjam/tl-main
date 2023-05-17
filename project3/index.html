@@ -51,7 +51,7 @@
         <div class="card-front__bottom">
           <p id="copiedName" class="card-info copied-name">Jane Appleseed</p>
           <p class="card-info copied-expiration">
-            <span id="copiedMonth" class="copied-month">00</span>/
+            <span id="copiedMonth" class="copied-month">00</span> /
             <span id="copiedYear" class="copied-year">00</span>
           </p>
         </div>
@@ -72,8 +72,8 @@
             maxlength="70" oninput="copyCardName()">
 
           <label for=" cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" class="card-number" placeholder="1234 5678 9123 0000" minlength="16"
-            maxlength="16" oninput="copyCardNumber()">
+          <input type="text" id="cardNumber" class="card-number" placeholder="1234 5678 9123 0000"
+            oninput="copyCardNumber()" pattern="^[0-9]{16}$">
 
         </div>
 
@@ -81,10 +81,10 @@
           <div class="form-bottom__EXP">
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
-              <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" minlength="2"
-                maxlength="2" oninput="copyCardMonth()">
-              <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" minlength="2"
-                maxlength="2" oninput="copyCardYear()">
+              <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
+                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$">
+              <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
+                oninput="copyCardYear()" pattern="^\d{2}$">
             </div>
           </div>
 
