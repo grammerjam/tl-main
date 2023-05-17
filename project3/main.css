@@ -2,14 +2,28 @@
 }
 
 @font-face {
-  font-family: Roboto Reg;
-  src: url("./fonts/Roboto-Regular.woff2");
+  font-family: "Space Grotesk Reg";
+  src: url("./fonts/SpaceGrotesk-Regular.woff2");
+}
+
+@font-face {
+  font-family: "Space Grotesk Med";
+  src: url("./fonts/SpaceGrotesk-Medium.woff2");
 }
 
 body {
   margin: 0;
   box-sizing: border-box;
-  font-family: "Roboto REg";
+  font-family: "Space Grotesk Reg";
+}
+
+input,
+button {
+  font-family: "Space Grotesk Reg";
+}
+
+label {
+  text-transform: uppercase;
 }
 
 main {
