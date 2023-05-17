@@ -11,27 +11,52 @@
 
   <title>Project 3 - LOST & 302</title>
 
-  <style>
+  <script>
+    function copyCardName() {
+      let text = document.getElementById("cardHolderName").value;
+      document.getElementById("copiedName").innerHTML = text;
+    }
 
-  </style>
+    function copyCardNumber() {
+      let text = document.getElementById("cardNumber").value;
+      document.getElementById("copiedNumber").innerHTML = text;
+    }
+
+    function copyCardMonth() {
+      let text = document.getElementById("cardExpirationMonth").value;
+      document.getElementById("copiedMonth").innerHTML = text;
+    }
+
+    function copyCardYear() {
+      let text = document.getElementById("cardExpirationYear").value;
+      document.getElementById("copiedYear").innerHTML = text;
+    }
+
+    function copyCardCVC() {
+      let text = document.getElementById("cardCVC").value;
+      document.getElementById("copiedCVC").innerHTML = text;
+    }
+
+  </script>
 </head>
 
 <body>
   <main>
     <div class="main-left">
-      <card class="card-top">
-        <p>
-          0000 0000 0000 0000
-          Jane Appleseed
-          00/00
-
-          000
-        </p>
+      <card class="card-front">
+        <p id="copiedNumber" class="copied-number">0000 0000 0000 0000</p>
+        <div class="card-front__bottom">
+          <p id="copiedName" class="copied-name">Jane Appleseed</p>
+          <p class="copied-expiration">
+            <span id="copiedMonth" class="copied-month">00</span>/
+            <span id="copiedYear" class="copied-year">00</span>
+          </p>
+        </div>
         <img src="./images/bg-card-front.png" />
       </card>
 
-      <card class="card-bottom">
-        <p></p>
+      <card class="card-back">
+        <p id="copiedCVC" class="copied-CVC"> 000</p>
         <img src="./images/bg-card-back.png" />
       </card>
 
@@ -41,18 +66,21 @@
       <form>
         <label for="cardHolderName">Cardholder Name</label>
         <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Jane Appleseed" minlength="2"
-          maxlength="70">
+          maxlength="70" oninput="copyCardName()">
 
-        <label for="cardNumber">Card Number</label>
+        <label for=" cardNumber">Card Number</label>
         <input type="number" id="cardNumber" name="cardNumber" placeholder="1234 5678 9123 0000" minlength="16"
-          maxlength="16">
+          maxlength="16" oninput="copyCardNumber()">
 
         <label for="cardExpiration">Exp. Date (MM/YY)</label>
-        <input type="number" id="cardExpiration" name="cardExpiration" placeholder="03" minlength="2" maxlength="2">
-        <input type="number" id="cardExpiration" name="cardExpiration" placeholder="26" minlength="2" maxlength="2">
+        <input type="number" id="cardExpirationMonth" name="cardExpiration" placeholder="03" minlength="2" maxlength="2"
+          oninput="copyCardMonth()">
+        <input type="number" id="cardExpirationYear" name="cardExpiration" placeholder="26" minlength="2" maxlength="2"
+          oninput="copyCardYear()">
 
         <label for="cardCVC">CVC</label>
-        <input type="CVC" id="cardCVC" name="cardCVC" placeholder="e.g. 123" minlength="3" maxlength="3">
+        <input type="CVC" id="cardCVC" name="cardCVC" placeholder="e.g. 123" minlength="3" maxlength="3"
+          oninput="copyCardCVC()">
 
         <button>Confirm</button>
       </form>
@@ -61,6 +89,7 @@
 
 
   </main>
+
 
 
 
