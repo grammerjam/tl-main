@@ -1,45 +1,78 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+  <link rel="stylesheet" href="./main.css">
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
-  
-  <title>Project 3 -  Team Name</title>
+
+  <title>Project 3 - LOST & 302</title>
 
   <style>
 
   </style>
 </head>
+
 <body>
+  <main>
+    <div class="main-left">
+      <card class="card-top">
+        <p>
+          0000 0000 0000 0000
+          Jane Appleseed
+          00/00
 
-  0000 0000 0000 0000
-  Jane Appleseed
-  00/00
+          000
+        </p>
+        <img src="./images/bg-card-front.png" />
+      </card>
 
-  000
+      <card class="card-bottom">
+        <p></p>
+        <img src="./images/bg-card-back.png" />
+      </card>
 
-  Cardholder Name
-  e.g. Jane Appleseed
+    </div>
 
-  Card Number
-  e.g. 1234 5678 9123 0000
+    <div class="main-right">
+      <form>
+        <label for="cardHolderName">Cardholder Name</label>
+        <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Jane Appleseed" minlength="2"
+          maxlength="70">
 
-  Exp. Date (MM/YY)
-  MM
-  YY
+        <label for="cardNumber">Card Number</label>
+        <input type="number" id="cardNumber" name="cardNumber" placeholder="1234 5678 9123 0000" minlength="16"
+          maxlength="16">
 
-  CVC
-  e.g. 123
+        <label for="cardExpiration">Exp. Date (MM/YY)</label>
+        <input type="number" id="cardExpiration" name="cardExpiration" placeholder="03" minlength="2" maxlength="2">
+        <input type="number" id="cardExpiration" name="cardExpiration" placeholder="26" minlength="2" maxlength="2">
 
-  Confirm
+        <label for="cardCVC">CVC</label>
+        <input type="CVC" id="cardCVC" name="cardCVC" placeholder="e.g. 123" minlength="3" maxlength="3">
+
+        <button>Confirm</button>
+      </form>
+    </div>
+
+
+
+  </main>
+
+
+
+
+
 
   <!-- Completed state start -->
 
   Thank you!
   We've added your card details
   Continue
-  
+
 </body>
+
 </html>
