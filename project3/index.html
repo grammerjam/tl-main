@@ -42,7 +42,9 @@
 
 <body>
   <main>
-    <div class="main-left">
+
+    <div class="main-top main-left">
+      <img class="main-top__background" src="./images/bg-main-mobile.png" />
       <img class="main-left__background" src="./images/bg-main-desktop.png" />
       <card class="card-front">
         <p id="copiedNumber" class="card-info copied-number">0000 0000 0000 0000</p>
@@ -53,36 +55,47 @@
             <span id="copiedYear" class="copied-year">00</span>
           </p>
         </div>
-        <img src="./images/bg-card-front.png" />
+        <img class="card-front__img" src="./images/bg-card-front.png" />
       </card>
 
       <card class="card-back">
         <p id="copiedCVC" class="copied-CVC"> 000</p>
-        <img src="./images/bg-card-back.png" />
+        <img class="card-back__img" src="./images/bg-card-back.png" />
       </card>
     </div>
 
-    <div class="main-right">
+    <div class="main-bottom main-right">
       <form>
-        <label for="cardHolderName">Cardholder Name</label>
-        <input type="text" id="cardHolderName" name="cardHolderName" placeholder="Jane Appleseed" minlength="2"
-          maxlength="70" oninput="copyCardName()">
+        <div class="form-top">
+          <label for="cardHolderName">Cardholder Name</label>
+          <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed" minlength="2"
+            maxlength="70" oninput="copyCardName()">
 
-        <label for=" cardNumber">Card Number</label>
-        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9123 0000" minlength="16"
-          maxlength="16" oninput="copyCardNumber()">
+          <label for=" cardNumber">Card Number</label>
+          <input type="text" id="cardNumber" class="card-number" placeholder="1234 5678 9123 0000" minlength="16"
+            maxlength="16" oninput="copyCardNumber()">
 
-        <label for="cardExpiration">Exp. Date (MM/YY)</label>
-        <input type="number" id="cardExpirationMonth" name="cardExpiration" placeholder="03" minlength="2" maxlength="2"
-          oninput="copyCardMonth()">
-        <input type="number" id="cardExpirationYear" name="cardExpiration" placeholder="26" minlength="2" maxlength="2"
-          oninput="copyCardYear()">
+        </div>
 
-        <label for="cardCVC">CVC</label>
-        <input type="CVC" id="cardCVC" name="cardCVC" placeholder="e.g. 123" minlength="3" maxlength="3"
-          oninput="copyCardCVC()">
+        <div class="form-bottom">
+          <div class="form-bottom__EXP">
+            <label for="cardExpiration">Exp. Date (MM/YY)</label>
+            <div class="form-bottom__inputs">
+              <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" minlength="2"
+                maxlength="2" oninput="copyCardMonth()">
+              <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" minlength="2"
+                maxlength="2" oninput="copyCardYear()">
+            </div>
+          </div>
 
-        <button>Confirm</button>
+          <div class="form-bottom__CVC">
+            <label for="cardCVC">CVC</label>
+            <input type="CVC" id="cardCVC" class="card-CVC" placeholder="e.g. 123" minlength="3" maxlength="3"
+              oninput="copyCardCVC()">
+          </div>
+
+        </div>
+        <button class="form-button">Confirm</button>
       </form>
     </div>
 

@@ -1,5 +1,9 @@
-@media screen and (min-width: 800px) {
-}
+/* Color Palette */ /*
+- Light grayish violet: hsl(270, 3%, 87%)
+- Dark grayish violet: hsl(279, 6%, 55%)
+- Very dark violet: hsl(278, 68%, 11%) 
+- Red (input errors): hsl(0, 100%, 66%)
+*/
 
 @font-face {
   font-family: "Space Grotesk Reg";
@@ -15,6 +19,8 @@ body {
   margin: 0;
   box-sizing: border-box;
   font-family: "Space Grotesk Reg";
+  color: hsl(278, 68%, 11%);
+  font-size: 18px;
 }
 
 input,
@@ -28,8 +34,18 @@ label {
 
 main {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-around;
+  position: relative;
+}
+
+.main-left__background {
+  display: none;
+}
+
+.main-top__background {
+  width: 100%;
+  z-index: -1;
   position: relative;
 }
 
@@ -38,18 +54,12 @@ form {
   flex-direction: column;
 }
 
-.main-left__background {
-  z-index: -1;
-  position: absolute;
-  left: 0;
-  height: 125%;
-}
-
 .card-front {
-  position: relative;
+  position: absolute;
   display: flex;
   flex-direction: column;
-  padding-top: 8rem;
+  left: 0;
+  z-index: 1;
 }
 
 .card-info {
@@ -61,7 +71,7 @@ form {
 .copied-number {
   left: 2rem;
   bottom: 4rem;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 
 .card-front__bottom {
@@ -71,18 +81,20 @@ form {
 .copied-name {
   bottom: 0;
   left: 2rem;
+  font-size: 1rem;
   text-transform: uppercase;
 }
 
 .copied-expiration {
   bottom: 0;
   right: 2rem;
+  font-size: 1rem;
 }
 
 .card-back {
   position: relative;
-  left: 6rem;
-  top: 2rem;
+  display: block;
+  top: -15rem;
 }
 
 .copied-CVC {
@@ -90,4 +102,105 @@ form {
   color: white;
   bottom: 6.5rem;
   right: 3.5rem;
+  font-size: 1rem;
+}
+
+.main-right {
+  width: 20rem;
+}
+
+label {
+  font-family: "Space Grotesk Med";
+  font-size: 0.75rem;
+  margin-bottom: 0.25rem;
+}
+input {
+  padding: 0.5rem;
+  margin-bottom: 1rem;
+  border-radius: 0.5rem;
+  border: solid 1px hsl(270, 3%, 87%);
+}
+
+.form-top {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-bottom {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-bottom__EXP {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-bottom__inputs {
+  display: flex;
+}
+
+.form-bottom__CVC {
+  display: flex;
+  flex-direction: column;
+}
+
+.card-expiration {
+  width: 2.5rem;
+  margin-right: 0.5rem;
+}
+
+.form-button {
+  background-color: hsl(278, 68%, 11%);
+  border: none;
+  color: white;
+  border-radius: 0.5rem;
+  padding: 1rem 0;
+  font-size: 1rem;
+  margin-top: 1rem;
+}
+
+@media screen and (min-width: 1000px) {
+  main {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+  }
+
+  .main-top__background {
+    display: none;
+  }
+
+  .main-left__background {
+    display: block;
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    height: 150%;
+  }
+
+  .card-front {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6rem;
+  }
+
+  .copied-number {
+    font-size: 1.5rem;
+  }
+
+  .copied-name,
+  .copied-expiration,
+  .copied-CVC {
+    font-size: 18px;
+  }
+
+  .card-back {
+    position: relative;
+    left: 6rem;
+    top: 2rem;
+  }
 }
