@@ -43,11 +43,12 @@
 <body>
   <main>
     <div class="main-left">
+      <img class="main-left__background" src="./images/bg-main-desktop.png" />
       <card class="card-front">
-        <p id="copiedNumber" class="copied-number">0000 0000 0000 0000</p>
+        <p id="copiedNumber" class="card-info copied-number">0000 0000 0000 0000</p>
         <div class="card-front__bottom">
-          <p id="copiedName" class="copied-name">Jane Appleseed</p>
-          <p class="copied-expiration">
+          <p id="copiedName" class="card-info copied-name">Jane Appleseed</p>
+          <p class="card-info copied-expiration">
             <span id="copiedMonth" class="copied-month">00</span>/
             <span id="copiedYear" class="copied-year">00</span>
           </p>
@@ -59,7 +60,6 @@
         <p id="copiedCVC" class="copied-CVC"> 000</p>
         <img src="./images/bg-card-back.png" />
       </card>
-
     </div>
 
     <div class="main-right">
@@ -69,7 +69,7 @@
           maxlength="70" oninput="copyCardName()">
 
         <label for=" cardNumber">Card Number</label>
-        <input type="number" id="cardNumber" name="cardNumber" placeholder="1234 5678 9123 0000" minlength="16"
+        <input type="text" id="cardNumber" name="cardNumber" placeholder="1234 5678 9123 0000" minlength="16"
           maxlength="16" oninput="copyCardNumber()">
 
         <label for="cardExpiration">Exp. Date (MM/YY)</label>

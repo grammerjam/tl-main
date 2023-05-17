@@ -1,15 +1,79 @@
+@media screen and (min-width: 800px) {
+}
+
+@font-face {
+  font-family: Roboto Reg;
+  src: url("./fonts/Roboto-Regular.woff2");
+}
+
 body {
   margin: 0;
   box-sizing: border-box;
+  font-family: "Roboto REg";
 }
 
 main {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: space-around;
+  position: relative;
 }
 
 form {
   display: flex;
   flex-direction: column;
+}
+
+.main-left__background {
+  z-index: -1;
+  position: absolute;
+  left: 0;
+  height: 125%;
+}
+
+.card-front {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding-top: 8rem;
+}
+
+.card-info {
+  z-index: 2;
+  position: absolute;
+  color: white;
+}
+
+.copied-number {
+  left: 2rem;
+  bottom: 4rem;
+  font-size: 2rem;
+}
+
+.card-front__bottom {
+  display: flex;
+}
+
+.copied-name {
+  bottom: 0;
+  left: 2rem;
+  text-transform: uppercase;
+}
+
+.copied-expiration {
+  bottom: 0;
+  right: 2rem;
+}
+
+.card-back {
+  position: relative;
+  left: 6rem;
+  top: 2rem;
+}
+
+.copied-CVC {
+  position: absolute;
+  color: white;
+  bottom: 6.5rem;
+  right: 3.5rem;
 }
