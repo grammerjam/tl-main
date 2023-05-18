@@ -80,6 +80,10 @@ form {
   z-index: 1;
   width: 18.75rem;
 }
+.card-front__img {
+  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
+}
 
 .card-info {
   z-index: 2;
@@ -121,6 +125,8 @@ form {
 
 .card-back__img {
   width: 100%;
+  box-shadow: 5px 4px 4px rgba(0, 0, 0, 0.2);
+  border-radius: 0.5rem;
 }
 
 .copied-CVC {
@@ -212,7 +218,8 @@ input {
     z-index: -1;
     position: absolute;
     left: 0;
-    height: 120%;
+    min-height: 100%;
+    max-height: auto;
   }
 
   .card-front {
