@@ -11,33 +11,7 @@
 
   <title>Project 3 - LOST & 302</title>
 
-  <script>
-    function copyCardName() {
-      let text = document.getElementById("cardHolderName").value;
-      document.getElementById("copiedName").innerHTML = text;
-    }
 
-    function copyCardNumber() {
-      let text = document.getElementById("cardNumber").value;
-      document.getElementById("copiedNumber").innerHTML = text;
-    }
-
-    function copyCardMonth() {
-      let text = document.getElementById("cardExpirationMonth").value;
-      document.getElementById("copiedMonth").innerHTML = text;
-    }
-
-    function copyCardYear() {
-      let text = document.getElementById("cardExpirationYear").value;
-      document.getElementById("copiedYear").innerHTML = text;
-    }
-
-    function copyCardCVC() {
-      let text = document.getElementById("cardCVC").value;
-      document.getElementById("copiedCVC").innerHTML = text;
-    }
-
-  </script>
 </head>
 
 <body>
@@ -95,12 +69,15 @@
           </div>
 
         </div>
-        <button class="form-button">Confirm</button>
+        <button type="submit" id="form-button" class="open-modal">Confirm</button>
+        <dialog open class="modal" id="modal">
+          <img src="./images/icon-complete.svg">
+          <h1>THANK YOU!</h1>
+          <p>We've added your card details</p>
+          <button type="button" id="close-button" class="close-modal">Continue</button>
+        </dialog>
       </form>
     </div>
-
-
-
   </main>
 
 
@@ -116,5 +93,43 @@
   Continue -->
 
 </body>
+<script>
+  const modal = document.querySelector('#modal')
+  const openModal = document.querySelector('.open-modal')
+  const closeModal = document.querySelector('.close-modal')
+
+  openModal.addEventListener('click', () => {
+    modal.showModal()
+  })
+
+  closeModal.addEventListener('click', () => {
+    modal.close()
+  })
+
+  function copyCardName() {
+    let text = document.getElementById("cardHolderName").value;
+    document.getElementById("copiedName").innerHTML = text;
+  }
+
+  function copyCardNumber() {
+    let text = document.getElementById("cardNumber").value;
+    document.getElementById("copiedNumber").innerHTML = text;
+  }
+
+  function copyCardMonth() {
+    let text = document.getElementById("cardExpirationMonth").value;
+    document.getElementById("copiedMonth").innerHTML = text;
+  }
+
+  function copyCardYear() {
+    let text = document.getElementById("cardExpirationYear").value;
+    document.getElementById("copiedYear").innerHTML = text;
+  }
+
+  function copyCardCVC() {
+    let text = document.getElementById("cardCVC").value;
+    document.getElementById("copiedCVC").innerHTML = text;
+  }
+</script>x
 
 </html>
