@@ -39,7 +39,7 @@
     </div>
 
     <div class="main-bottom main-right">
-      <form>
+      <form method="dialog">
         <div class="form-top">
           <label for="cardHolderName">Cardholder Name</label>
           <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed" minlength="2"
@@ -69,12 +69,12 @@
           </div>
 
         </div>
-        <button type="submit" id="form-button" class="open-modal">Confirm</button>
-        <dialog open class="modal" id="modal">
+        <button data-open-modal id="form-button" class="open-modal">Confirm</button>
+        <dialog data-modal id="modal">
           <img src="./images/icon-complete.svg">
           <h1>THANK YOU!</h1>
           <p>We've added your card details</p>
-          <button type="button" id="close-button" class="close-modal">Continue</button>
+          <button formmethod="dialog" id="close-button" data-close-modal>Continue</button>
         </dialog>
       </form>
     </div>
@@ -92,44 +92,45 @@
   We've added your card details
   Continue -->
 
+
+  <script>
+    const openModal = document.querySelector("[data-open-modal]")
+    const closeModal = document.querySelector("[data-close-modal]")
+    const modal = document.querySelector("[data-modal]")
+
+    openModal.addEventListener("click", () => {
+      modal.showModal()
+    })
+
+    closeModal.addEventListener("click", () => {
+      modal.close()
+    })
+
+    function copyCardName() {
+      let text = document.getElementById("cardHolderName").value;
+      document.getElementById("copiedName").innerHTML = text;
+    }
+
+    function copyCardNumber() {
+      let text = document.getElementById("cardNumber").value;
+      document.getElementById("copiedNumber").innerHTML = text;
+    }
+
+    function copyCardMonth() {
+      let text = document.getElementById("cardExpirationMonth").value;
+      document.getElementById("copiedMonth").innerHTML = text;
+    }
+
+    function copyCardYear() {
+      let text = document.getElementById("cardExpirationYear").value;
+      document.getElementById("copiedYear").innerHTML = text;
+    }
+
+    function copyCardCVC() {
+      let text = document.getElementById("cardCVC").value;
+      document.getElementById("copiedCVC").innerHTML = text;
+    }
+  </script>
 </body>
-<script>
-  const modal = document.querySelector('#modal')
-  const openModal = document.querySelector('.open-modal')
-  const closeModal = document.querySelector('.close-modal')
-
-  openModal.addEventListener('click', () => {
-    modal.showModal()
-  })
-
-  closeModal.addEventListener('click', () => {
-    modal.close()
-  })
-
-  function copyCardName() {
-    let text = document.getElementById("cardHolderName").value;
-    document.getElementById("copiedName").innerHTML = text;
-  }
-
-  function copyCardNumber() {
-    let text = document.getElementById("cardNumber").value;
-    document.getElementById("copiedNumber").innerHTML = text;
-  }
-
-  function copyCardMonth() {
-    let text = document.getElementById("cardExpirationMonth").value;
-    document.getElementById("copiedMonth").innerHTML = text;
-  }
-
-  function copyCardYear() {
-    let text = document.getElementById("cardExpirationYear").value;
-    document.getElementById("copiedYear").innerHTML = text;
-  }
-
-  function copyCardCVC() {
-    let text = document.getElementById("cardCVC").value;
-    document.getElementById("copiedCVC").innerHTML = text;
-  }
-</script>x
 
 </html>
