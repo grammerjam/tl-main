@@ -210,7 +210,7 @@ input {
   margin-right: 0.5rem;
 }
 
-#form-button {
+#formButton {
   background-color: hsl(278, 68%, 11%);
   border: none;
   color: white;
@@ -237,7 +237,7 @@ input {
   width: 90%;
   height: 300px;
   border: none;
-  top: 50%;
+  top: 60%;
 }
 
 .modal p {
@@ -326,6 +326,10 @@ footer {
   #close-button {
     width:58%;
     height: 10%;
+  }
+
+  .nav-bar {
+    width: 55%;
   }
 
   .left-nav {

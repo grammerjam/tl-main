@@ -41,16 +41,15 @@
     </div>
 
     <div class="main-bottom main-right">
-      <form method="dialog">
+      <form method="dialog" name="myForm" action="/action_page.php" onsubmit="return validateForm()" method="post">
         <div class="form-top">
           <label for="cardHolderName">Cardholder Name</label>
           <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed" minlength="2"
-            maxlength="70" oninput="copyCardName()">
+            maxlength="70" oninput="copyCardName()" required>
 
           <label for=" cardNumber">Card Number</label>
           <input type="text" id="cardNumber" class="card-number" placeholder="1234 5678 9123 0000"
-            oninput="copyCardNumber()" pattern="^[0-9]{16}$">
-
+            oninput="copyCardNumber()" pattern="^[0-9]{16}$" required>
         </div>
 
         <div class="form-bottom">
@@ -58,20 +57,20 @@
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
               <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
-                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$">
+                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$" required>
               <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
-                oninput="copyCardYear()" pattern="^\d{2}$">
+                oninput="copyCardYear()" pattern="^\d{2}$" required>
             </div>
           </div>
 
           <div class="form-bottom__CVC">
             <label for="cardCVC">CVC</label>
             <input type="CVC" id="cardCVC" class="card-CVC" placeholder="e.g. 123" minlength="3" maxlength="3"
-              oninput="copyCardCVC()">
+              oninput="copyCardCVC()" required>
           </div>
         </div>
 
-        <button data-open-modal id="form-button" class="open-modal">Confirm</button>
+        <button type='submit' value="Submit" data-open-modal id="formButton" class="open-modal">Confirm</button>
         <dialog data-modal class="modal">
           <img src="./images/icon-complete.svg">
           <h1>THANK YOU!</h1>
@@ -124,6 +123,37 @@
       let text = document.getElementById("cardCVC").value;
       document.getElementById("copiedCVC").innerHTML = text;
     }
+
+    formSubmit.addEventListener('click', function (e) {
+      event.preventDefault();
+    });
+
+    function validateForm() {
+      let x = document.forms["myForm"]["card-name"].value;
+      if (x == "") {
+        alert("Name must be filled out");
+        return false;
+      }
+    }
+
+    // const cardHolderName = getElementById('cardHolderName')
+    // const cardNumber = getElementById('cardNumber')
+    // const cardExpirationMonth = getElementById('cardExpirationMonth')
+    // const cardExpirationYear = getElementById('cardExpirationYear')
+    // const cardCVC = getElementById('cardCVC')
+    // const form = getElementById('form')
+    // const error = document.getElementById('error')
+
+    // form.addEventListener('submit', (e) => {
+    //   let messages = []
+    //   if (name.value === '' || name.value == null) {
+    //     messages.push('Name is required')
+    //   }
+    //   if (messages.length > 0)
+    //     e.preventDefault
+    //   errorElement.innerText = messages.join(',')
+    // })
+
   </script>
 </body>
 
