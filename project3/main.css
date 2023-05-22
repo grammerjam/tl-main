@@ -345,5 +345,7 @@ footer {
   footer {
     font-size: 18px;
     margin-top: 300px;
+    margin-right: 35px;
+    text-align: right;
   }
 }
