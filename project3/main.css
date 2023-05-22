@@ -70,6 +70,24 @@ h1 {
   position: relative;
 }
 
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  width: 65%;
+}
+
+.left-nav {
+  font-size: 15px;
+  text-align: left;
+  padding: 10px;
+}
+
+.right-nav {
+  font-size: 15px;
+  text-align: center;
+  padding: 10px;
+}
+
 form {
   display: flex;
   flex-direction: column;
@@ -231,6 +249,12 @@ dialog::backdrop {
   background-color: transparent;
 }
 
+footer {
+  text-align: center;
+  font-size: 12px;
+  padding: 10px;
+}
+
 @media screen and (min-width: 1000px) {
   main {
     display: flex;
@@ -302,5 +326,20 @@ dialog::backdrop {
   #close-button {
     width:58%;
     height: 10%;
+  }
+
+  .left-nav {
+    font-size: 25px;
+    padding: 10px;
+  }
+  
+  .right-nav {
+    font-size: 25px;
+    padding: 10px;
+  }
+
+  footer {
+    font-size: 18px;
+    margin-top: 300px;
   }
 }
