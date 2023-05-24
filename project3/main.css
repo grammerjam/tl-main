@@ -249,6 +249,14 @@ dialog::backdrop {
   background-color: transparent;
 }
 
+.message .danger {
+  display: none;
+}
+
+.message .success {
+  display: none;
+}
+
 footer {
   text-align: center;
   font-size: 12px;
