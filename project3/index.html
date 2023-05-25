@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <!-- displays site properly based on user's device -->
   <link rel="stylesheet" href="./main.css">
+  <script src="./script.js" defer></script>
   <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
 
@@ -43,13 +44,17 @@
     <div class="main-bottom main-right">
       <form name="myForm" onsubmit="validateForm(event)" method="post" required>
         <div class="form-top">
+
           <label for="cardHolderName">Cardholder Name</label>
-          <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed" minlength="2"
-            maxlength="70" oninput="copyCardName()" required>
+          <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed" autocomplete="off"
+            oninput="copyCardName()" onkeypress="return (event.charCode> 64 && event.charCode < 91) ||
+            (event.charCode > 96 && event.charCode < 123) || event.key == ' ' " onkeyup="validateName()" required>
+          <span class="error-msg" id="nameError"></span>
 
           <label for=" cardNumber">Card Number</label>
-          <input type="text" id="cardNumber" class="card-number" placeholder="1234 5678 9123 0000"
-            oninput="copyCardNumber()" pattern="^[0-9]{16}$" required>
+          <input type="tel" id="cardNumber" class="card-number" autocomplete="off" placeholder="1234 5678 9101 1121"
+            oninput="copyCardNumber()" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="validateNumber()" required>
+            <span class="error-msg" id="numberError"></span>
         </div>
 
         <div class="form-bottom">
@@ -57,17 +62,17 @@
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
               <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
-                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$" required>
+                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$" autocomplete="off" required>
               <label class="label">The date is incorrect.</label>
               <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
-                oninput="copyCardYear()" pattern="^\d{2}$" required>
+                oninput="copyCardYear()" pattern="^\d{2}$" autocomplete="off" required>
               <label class="label">The date is incorrect.</label>
             </div>
           </div>
 
           <div class="form-bottom__CVC">
             <label for="cardCVC">CVC</label>
-            <input type="CVC" id="cardCVC" class="card-CVC" placeholder="e.g. 123" minlength="3" maxlength="3"
+            <input type="number" id="cardCVC" class="card-CVC" placeholder="e.g. 123" minlength="3" maxlength="3"
               oninput="copyCardCVC()" required>
           </div>
         </div>
@@ -152,40 +157,16 @@
       modal.close()
     })
 
-    function copyCardName() {
-      let text = document.getElementById("cardHolderName").value;
-      document.getElementById("copiedName").innerHTML = text;
-    }
 
-    function copyCardNumber() {
-      let text = document.getElementById("cardNumber").value;
-      document.getElementById("copiedNumber").innerHTML = text;
-    }
-
-    function copyCardMonth() {
-      let text = document.getElementById("cardExpirationMonth").value;
-      document.getElementById("copiedMonth").innerHTML = text;
-    }
-
-    function copyCardYear() {
-      let text = document.getElementById("cardExpirationYear").value;
-      document.getElementById("copiedYear").innerHTML = text;
-    }
-
-    function copyCardCVC() {
-      let text = document.getElementById("cardCVC").value;
-      document.getElementById("copiedCVC").innerHTML = text;
-    }
-
-
-    // const cardHolderName = getElementById('cardHolderName')
-    // const cardNumber = getElementById('cardNumber')
-    // const cardExpirationMonth = getElementById('cardExpirationMonth')
-    // const cardExpirationYear = getElementById('cardExpirationYear')
-    // const cardCVC = getElementById('cardCVC')
-    // const form = getElementById('form')
+    // const cardHolderName = document.getElementById('cardHolderName')
+    // const cardNumber = document.getElementById('cardNumber')
+    // const cardExpirationMonth = document.getElementById('cardExpirationMonth')
+    // const cardExpirationYear = document.getElementById('cardExpirationYear')
+    // const cardCVC = document.getElementById('cardCVC')
+    // const form = document.querySelector('form')
     // const error = document.getElementById('error')
 
+   
     // form.addEventListener('submit', (e) => {
     //   let messages = []
     //   if (name.value === '' || name.value == null) {

@@ -181,6 +181,17 @@ input {
   border: solid 1px hsl(270, 3%, 87%);
 }
 
+input:invalid {
+  border: 1px solid hsl(0, 100%, 66%);
+}
+
+.error-msg {
+  font-size: 0.75rem;
+  color: hsl(0, 100%, 66%);
+  font-family: "Space Grotesk Med";
+  text-transform: uppercase;
+}
+
 .form-top {
   display: flex;
   flex-direction: column;
@@ -332,7 +343,7 @@ footer {
   }
 
   #close-button {
-    width:58%;
+    width: 58%;
     height: 10%;
   }
 
@@ -344,7 +355,7 @@ footer {
     font-size: 25px;
     padding: 10px;
   }
-  
+
   .right-nav {
     font-size: 25px;
     padding: 10px;
