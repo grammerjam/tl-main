@@ -98,7 +98,7 @@ function validateYear() {
     yearError.innerHTML = "Must be 2 digits";
     return false;
   }
-  if (!year.match(/^0[1-9]|1[0-2]$/)) {
+  if (!year.match(/^(?:2[3-9]|[3-9][0-9]|33)$/)) {
     yearError.innerHTML = "Incorrect Format";
     return false;
   }
@@ -124,8 +124,35 @@ function validateCVC() {
   return true;
 }
 
+const cardHolderName = document.getElementById("cardHolderName");
+const cardNumber = document.getElementById("cardNumber");
+const expirationMonth = document.getElementById("cardExpirationMonth");
+const expirationYear = document.getElementById("cardExpirationYear");
+const cardCVC = document.getElementById("cardCVC");
+
+const openModal = document.querySelector("[data-open-modal]");
+const closeModal = document.querySelector("[data-close-modal]");
+const modal = document.querySelector("[data-modal]");
+
+openModal.addEventListener("click", () => {
+  modal.showModal();
+});
+
+closeModal.addEventListener("click", () => {
+  modal.close();
+});
+
 // form.addEventListener("submit", (event) => {
-//   if (!cardHolderName.validity.valid || !cardNumber.validity.valid || !cardExpirationMonth.validity.valid || !cardExpirationYear.validity.valid || !cardCVC.validity.valid) {
+//   if (
+//     !cardHolderName.validity.valid ||
+//     !cardNumber.validity.valid ||
+//     !expirationMonth.validity.valid ||
+//     !expirationYear.validity.valid ||
+//     !cardCVC.validity.valid
+// openModal.addEventListener("click", () => {
+//   modal.showModal();
+// });
+//   ) {
 //     showError();
 //     event.preventDefault();
 //   }
