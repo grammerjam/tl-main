@@ -27,7 +27,6 @@ function copyCardCVC() {
 }
 
 const nameError = document.getElementById("nameError");
-const cardNumberError = document.getElementById("numberError");
 
 function validateName() {
   let name = document.getElementById("cardHolderName").value;
@@ -45,6 +44,8 @@ function validateName() {
   return true;
 }
 
+const cardNumberError = document.getElementById("numberError");
+
 function validateNumber() {
   let number = document.getElementById("cardNumber").value;
   // checks if card number is empty
@@ -58,6 +59,68 @@ function validateNumber() {
     return false;
   }
   cardNumberError.innerHTML = "";
+  return true;
+}
+
+const monthError = document.getElementById("monthError");
+
+function validateMonth() {
+  let month = document.getElementById("cardExpirationMonth").value;
+  // checks if card month is empty
+  if (month.length == 0) {
+    monthError.innerHTML = "Cannot be blank";
+    return false;
+  }
+  // checks if card month is more or less than 2
+  if (month.length != 2) {
+    monthError.innerHTML = "Must be 2 digits";
+    return false;
+  }
+  if (!month.match(/^0[1-9]|1[0-2]$/)) {
+    monthError.innerHTML = "Incorrect Format";
+    return false;
+  }
+  monthError.innerHTML = "";
+  return true;
+}
+
+const yearError = document.getElementById("yearError");
+
+function validateYear() {
+  let year = document.getElementById("cardExpirationYear").value;
+  // checks if card year is empty
+  if (year.length == 0) {
+    yearError.innerHTML = "Cannot be blank";
+    return false;
+  }
+  // checks if card year is more or less than 2
+  if (year.length != 2) {
+    yearError.innerHTML = "Must be 2 digits";
+    return false;
+  }
+  if (!year.match(/^0[1-9]|1[0-2]$/)) {
+    yearError.innerHTML = "Incorrect Format";
+    return false;
+  }
+  yearError.innerHTML = "";
+  return true;
+}
+
+const CVCError = document.getElementById("CVCError");
+
+function validateCVC() {
+  let CVC = document.getElementById("cardCVC").value;
+  // checks if card cvc is empty
+  if (CVC.length == 0) {
+    CVCError.innerHTML = "Cannot be blank";
+    return false;
+  }
+  // checks if card CVC is more or less than 3
+  if (CVC.length != 3) {
+    CVCError.innerHTML = "Must be 3 digits";
+    return false;
+  }
+  CVCError.innerHTML = "";
   return true;
 }
 

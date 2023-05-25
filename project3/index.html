@@ -53,7 +53,8 @@
 
           <label for=" cardNumber">Card Number</label>
           <input type="tel" id="cardNumber" class="card-number" autocomplete="off" placeholder="1234 5678 9101 1121"
-            oninput="copyCardNumber()" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="validateNumber()" required>
+            oninput="copyCardNumber()" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+            onkeyup="validateNumber()" required>
             <span class="error-msg" id="numberError"></span>
         </div>
 
@@ -61,19 +62,23 @@
           <div class="form-bottom__EXP">
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
-              <input type="number" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
-                oninput="copyCardMonth()" pattern="^(0[0-9]|1[0-2])$" autocomplete="off" required>
-              <label class="label">The date is incorrect.</label>
-              <input type="number" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
-                oninput="copyCardYear()" pattern="^\d{2}$" autocomplete="off" required>
-              <label class="label">The date is incorrect.</label>
+              <input type="tel" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
+                oninput="copyCardMonth()" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+                onkeyup="validateMonth()" autocomplete="off" required>
+              <span class="error-msg" id="monthError"></span>
+              
+              <input type="tel" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
+                oninput="copyCardYear()"onkeypress="return event.charCode >= 48 && event.charCode <= 57"  
+                onkeyup="validateYear()" autocomplete="off" required>
+              <span class="error-msg" id="yearError"></span>
             </div>
           </div>
 
           <div class="form-bottom__CVC">
             <label for="cardCVC">CVC</label>
-            <input type="number" id="cardCVC" class="card-CVC" placeholder="e.g. 123" minlength="3" maxlength="3"
-              oninput="copyCardCVC()" required>
+            <input type="tel" id="cardCVC" class="card-CVC" placeholder="e.g. 123" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="3"
+              oninput="copyCardCVC()" onkeyup="validateCVC()" required>
+              <span class="error-msg" id="CVCError"></span>
           </div>
         </div>
 
