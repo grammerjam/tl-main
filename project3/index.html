@@ -62,15 +62,20 @@
           <div class="form-bottom__EXP">
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
-              <input type="tel" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
-                oninput="copyCardMonth()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                onkeyup="validateMonth()" autocomplete="off" required>
-              <span class="error-msg" id="monthError"></span>
+              <div class="form-bottom__inputs-EXP">
+                <input type="tel" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
+                  oninput="copyCardMonth()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                  onkeyup="validateMonth()" autocomplete="off" required>
+                <span class="error-msg" id="monthError"></span>
+              </div>
 
-              <input type="tel" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
-                oninput="copyCardYear()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
-                onkeyup="validateYear()" autocomplete="off" required>
-              <span class="error-msg" id="yearError"></span>
+              <div class="form-bottom__inputs-EXP">
+                <input type="tel" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
+                  oninput="copyCardYear()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                  onkeyup="validateYear()" autocomplete="off" required>
+                <span class="error-msg" id="yearError"></span>
+              </div>
+
             </div>
           </div>
 

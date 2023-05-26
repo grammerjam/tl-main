@@ -196,7 +196,7 @@ input:invalid {
   color: hsl(0, 100%, 66%);
   font-family: "Space Grotesk Med";
   text-transform: uppercase;
-  padding: .5rem;
+  padding: 0.5rem;
 }
 
 #monthError {
@@ -207,12 +207,9 @@ input:invalid {
   font-size: 10px;
 }
 
-#cardCVC {
-  width: 30px;
-}
 
-.error-msg #CVCError {
-  font-szie: 8px;
+#CVCError {
+  font-size: 10px;
 }
 
 .form-top {
@@ -231,6 +228,12 @@ input:invalid {
 
 .form-bottom__inputs {
   display: flex;
+}
+
+.form-bottom__inputs-EXP {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
 }
 
 .form-bottom__CVC {
@@ -268,7 +271,7 @@ input:invalid {
   display: none;
 }
 
- .modal {
+.modal {
   display: none;
   background-color: white;
   text-align: center;
@@ -277,10 +280,10 @@ input:invalid {
   height: 450px;
   border: none;
   top: 50%;
-  left:10%;
+  left: 10%;
 }
 
- .modal p {
+.modal p {
   color: hsl(279, 6%, 55%);
   font-size: 16px;
 }
