@@ -16,7 +16,7 @@
 
 <body>
   <div class="nav-bar">
-    <div class="left-nav"><i class='bx bxs-star-half'></i></div>
+    <div class="left-nav"><img src="./images/2.png"></div>
     <div class="right-nav">Lost and 302</div>
   </div>
   <main>
@@ -53,9 +53,9 @@
 
           <label for=" cardNumber">Card Number</label>
           <input type="tel" id="cardNumber" class="card-number" autocomplete="off" placeholder="1234 5678 9101 1121"
-            oninput="copyCardNumber()" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+            oninput="copyCardNumber()" maxlength="16" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
             onkeyup="validateNumber()" required>
-            <span class="error-msg" id="numberError"></span>
+          <span class="error-msg" id="numberError"></span>
         </div>
 
         <div class="form-bottom">
@@ -63,12 +63,12 @@
             <label for="cardExpiration">Exp. Date (MM/YY)</label>
             <div class="form-bottom__inputs">
               <input type="tel" id="cardExpirationMonth" class="card-expiration" placeholder="03" maxlength="2"
-                oninput="copyCardMonth()" onkeypress="return event.charCode >= 48 && event.charCode <= 57" 
+                oninput="copyCardMonth()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                 onkeyup="validateMonth()" autocomplete="off" required>
               <span class="error-msg" id="monthError"></span>
-              
+
               <input type="tel" id="cardExpirationYear" class="card-expiration" placeholder="26" maxlength="2"
-                oninput="copyCardYear()"onkeypress="return event.charCode >= 48 && event.charCode <= 57"  
+                oninput="copyCardYear()" onkeypress="return event.charCode >= 48 && event.charCode <= 57"
                 onkeyup="validateYear()" autocomplete="off" required>
               <span class="error-msg" id="yearError"></span>
             </div>
@@ -76,24 +76,27 @@
 
           <div class="form-bottom__CVC">
             <label for="cardCVC">CVC</label>
-            <input type="tel" id="cardCVC" class="card-CVC" placeholder="e.g. 123" onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="3"
-              oninput="copyCardCVC()" onkeyup="validateCVC()" required>
-              <span class="error-msg" id="CVCError"></span>
+            <input type="tel" id="cardCVC" class="card-CVC" placeholder="e.g. 123"
+              onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="3" oninput="copyCardCVC()"
+              onkeyup="validateCVC()" required>
+            <span class="error-msg" id="CVCError"></span>
           </div>
         </div>
 
         <input type="submit" value="Submit" data-open-modal id="formButton" class="open-modal"></input>
-        <dialog data-modal class="modal">
-          <img src="./images/icon-complete.svg">
-          <h1>THANK YOU!</h1>
-          <p>We've added your card details</p>
-          <button formmethod="dialog" id="close-button" data-close-modal>Continue</button>
+        <dialog class="modal">
+
         </dialog>
       </form>
     </div>
 
     <div class="message">
-      <div class="success" id="success">Your message successfully sent!</div>
+      <div class="modal" id="success">
+        <img src="./images/icon-complete.svg">
+        <h1>THANK YOU!</h1>
+        <p>We've added your card details</p>
+        <button id="close-button" data-close-modal>Continue</button>
+      </div>
       <div class="danger" id="danger">Fields can't be empty!</div>
     </div>
   </main>
@@ -103,86 +106,6 @@
   </footer>
 
 
-  <script>
-    // check date format function
-    let btnCheck = document.querySelector('formButton')
-    let result = document.getElementsByClassName('label')
-    let ExpirationMonth = document.querySelector('cardExpirationMonth')
-    let ExpirationYear = document.querySelector('cardExpirationYear')
-
-    btnCheck.addEventListener('click', () => {
-      let cardExpirationMonth = inputExpirationMonth.value
-      let cardExpirationYear = inputExpirationYear.value
-
-      result.innerText = moment(`${month}/${year}`, 'MM/YY', true).isValid();
-    })
-
-
-    // function validateForm(event) {
-    //   event.preventDefault(); // Prevent default form submission behavior
-
-    //   const cardHolderName = document.getElementById('cardHolderName');
-    //   const cardNumber = document.getElementById('cardNumber');
-    //   const expirationMonth = document.getElementById('cardExpirationMonth');
-    //   const expirationYear = document.getElementById('cardExpirationYear');
-    //   const cardCVC = document.getElementById('cardCVC');
-
-    //   const danger = document.getElementById('danger');
-    //   const success = document.getElementById('success');
-
-    //   if (cardHolderName.value === '' || cardNumber.value === '' || expirationMonth.value === '' || expirationYear.value === '' || cardCVC.value === '') {
-    //     danger.style.display = 'block';
-    //   } else {
-    //     setTimeout(() => {
-    //       cardHolderName.value = '';
-    //       cardNumber.value = '';
-    //       expirationMonth.value = '';
-    //       expirationYear.value = '';
-    //       cardCVC.value = '';
-    //     }, 2000);
-
-    //     success.style.display = 'block';
-    //   }
-
-    //   setTimeout(() => {
-    //     danger.style.display = 'none';
-    //     success.style.display = 'none';
-    //   }, 4000);
-    // }
-
-    const openModal = document.querySelector("[data-open-modal]")
-    const closeModal = document.querySelector("[data-close-modal]")
-    const modal = document.querySelector("[data-modal]")
-
-    openModal.addEventListener("click", () => {
-      modal.showModal()
-    })
-
-    closeModal.addEventListener("click", () => {
-      modal.close()
-    })
-
-
-    // const cardHolderName = document.getElementById('cardHolderName')
-    // const cardNumber = document.getElementById('cardNumber')
-    // const cardExpirationMonth = document.getElementById('cardExpirationMonth')
-    // const cardExpirationYear = document.getElementById('cardExpirationYear')
-    // const cardCVC = document.getElementById('cardCVC')
-    // const form = document.querySelector('form')
-    // const error = document.getElementById('error')
-
-   
-    // form.addEventListener('submit', (e) => {
-    //   let messages = []
-    //   if (name.value === '' || name.value == null) {
-    //     messages.push('Name is required')
-    //   }
-    //   if (messages.length > 0)
-    //     e.preventDefault
-    //   errorElement.innerText = messages.join(',')
-    // })
-
-  </script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
 </body>
 

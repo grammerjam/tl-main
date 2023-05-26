@@ -1,3 +1,37 @@
+// let btnCheck = document.querySelector('formButton')
+// let result = document.getElementsByClassName('label')
+// let ExpirationMonth = document.querySelector('cardExpirationMonth')
+// let ExpirationYear = document.querySelector('cardExpirationYear')
+
+// btnCheck.addEventListener('click', () => {
+//   let cardExpirationMonth = inputExpirationMonth.value
+//   let cardExpirationYear = inputExpirationYear.value
+
+//   result.innerText = moment(`${month}/${year}`, 'MM/YY', true).isValid();
+// })
+
+// function checkForm(form) {
+//   // validation fails if the input is blank
+//   if (form.inputfield.value == "") {
+//     alert("Error: Input is empty!");
+//     form.inputfield.focus();
+//     return false;
+//   }
+
+//   // regular expression to match only alphanumeric characters and spaces
+//   const re = /^[\w ]+$/;
+
+//   // validation fails if the input doesn't match our regular expression
+//   if (!re.test(form.inputfield.value)) {
+//     alert("Error: Input contains invalid characters!");
+//     form.inputfield.focus();
+//     return false;
+//   }
+
+//   // validation was successful
+//   return true;
+// }
+
 function copyCardName() {
   let text = document.getElementById("cardHolderName").value;
   document.getElementById("copiedName").innerHTML = text;
@@ -124,23 +158,91 @@ function validateCVC() {
   return true;
 }
 
+function validateForm(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+
+  const cardHolderName = document.getElementById('cardHolderName');
+  const cardNumber = document.getElementById('cardNumber');
+  const expirationMonth = document.getElementById('cardExpirationMonth');
+  const expirationYear = document.getElementById('cardExpirationYear');
+  const cardCVC = document.getElementById('cardCVC');
+
+  const danger = document.getElementById('danger');
+  const success = document.getElementById('success');
+
+  if (cardHolderName.value === '' || cardNumber.value === '' || expirationMonth.value === '' || expirationYear.value === '' || cardCVC.value === '') {
+    danger.style.display = 'block';
+  } else {
+    setTimeout(() => {
+      cardHolderName.value = '';
+      cardNumber.value = '';
+      expirationMonth.value = '';
+      expirationYear.value = '';
+      cardCVC.value = '';
+    }, 4000);
+
+    success.style.display = 'block';
+  }
+
+  setTimeout(() => {
+    danger.style.display = 'none';
+    success.style.display = 'none';
+  }, 8000);
+}
+
 const cardHolderName = document.getElementById("cardHolderName");
 const cardNumber = document.getElementById("cardNumber");
 const expirationMonth = document.getElementById("cardExpirationMonth");
 const expirationYear = document.getElementById("cardExpirationYear");
 const cardCVC = document.getElementById("cardCVC");
 
-const openModal = document.querySelector("[data-open-modal]");
-const closeModal = document.querySelector("[data-close-modal]");
-const modal = document.querySelector("[data-modal]");
+function validateForm(event) {
+  event.preventDefault(); // Prevent default form submission behavior
+
+  const cardHolderName = document.getElementById('cardHolderName');
+  const cardNumber = document.getElementById('cardNumber');
+  const expirationMonth = document.getElementById('cardExpirationMonth');
+  const expirationYear = document.getElementById('cardExpirationYear');
+  const cardCVC = document.getElementById('cardCVC');
+
+  const danger = document.getElementById('danger');
+  const success = document.getElementById('success');
+
+  if (cardHolderName.value === '' || cardNumber.value === '' || expirationMonth.value === '' || expirationYear.value === '' || cardCVC.value === '') {
+    danger.style.display = 'block';
+  } else {
+    setTimeout(() => {
+      cardHolderName.value = '';
+      cardNumber.value = '';
+      expirationMonth.value = '';
+      expirationYear.value = '';
+      cardCVC.value = '';
+    }, 8000);
+
+    success.style.display = 'block';
+  }
+
+  // onEvent("cancelButton", "click", function(){
+  //   if(t) {
+  //     clearTimeout(t);
+
+  setTimeout(() => {
+    danger.style.display = 'none';
+    success.style.display = 'none';
+  }, 9000);
+}
+
+const openModal = document.querySelector("[data-open-modal]")
+const closeModal = document.querySelector("[data-close-modal]")
+const modal = document.querySelector("[data-modal]")
 
 openModal.addEventListener("click", () => {
-  modal.showModal();
-});
+  modal.showModal()
+})
 
 closeModal.addEventListener("click", () => {
-  modal.close();
-});
+  modal.close()
+})
 
 // form.addEventListener("submit", (event) => {
 //   if (
