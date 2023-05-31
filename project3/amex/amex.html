@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./amex.css">
+    <script src="./amexScript.js" defer></script>
+    <link rel="icon" type="image/png" sizes="32x32" href="../images/logo-icon.png">
+    <title>American Express Form</title>
+</head>
+
+<body>
+    <div class="nav-bar">
+        <div class="left-nav"><img class="left-nav__img" src="../images/logo-icon.png"></div>
+        <div class="middle-nav">Lost and 302</div>
+        <div class="right-nav"><a href="../index.html">Other Cards</a></div>
+    </div>
+    <main>
+        <div class="main-top main-left">
+            <img class="main-top__background" src="../images/bg-main-mobile.png" />
+            <img class="main-left__background" src="../images/bg-main-desktop.png" />
+            <card class="card-front">
+                <p id="copiedNumber" class="card-info copied-number">0000 000000 00000</p>
+                <div class="card-front__bottom">
+                    <p id="copiedName" class="card-info copied-name">Jane Appleseed</p>
+                    <p class="card-info copied-expiration">
+                        <span id="copiedMonth" class="copied-month">00</span> /
+                        <span id="copiedYear" class="copied-year">00</span>
+                    </p>
+                </div>
+                <p id="copiedCVC" class="copied-CVC"> 0000</p>
+                <img class="card-front__img" src="../images/bg-card-front.png" />
+            </card>
+
+        </div>
+
+        <div class="main-bottom main-right">
+            <form name="myForm" onsubmit="validateForm(event)" method="post" required>
+                <div class="form-top">
+
+                    <label for="cardHolderName">Cardholder Name</label>
+                    <input type="text" id="cardHolderName" class="card-name" placeholder="Jane Appleseed"
+                        autocomplete="off" oninput="copyCardName()" onkeypress="return (event.charCode> 64 && event.charCode < 91) ||
+              (event.charCode > 96 && event.charCode < 123) || event.key == ' ' " onkeyup="validateName()" required>
+                    <span class="error-msg" id="nameError"></span>
+
+                    <label for=" cardNumber">Card Number</label>
+                    <input type="tel" id="cardNumber" class="card-number" autocomplete="off"
+                        placeholder="1234 567891 01112" oninput="copyCardNumber()" maxlength="15"
+                        onkeypress="return event.charCode >= 48 && event.charCode <= 57" onkeyup="validateNumber()"
+                        required>
+                    <span class="error-msg" id="numberError"></span>
+                </div>
+
+                <div class="form-bottom">
+                    <div class="form-bottom__EXP">
+                        <label for="cardExpiration">Exp. Date (MM/YY)</label>
+                        <div class="form-bottom__inputs">
+                            <div class="form-bottom__inputs-EXP">
+                                <input type="tel" id="cardExpirationMonth" class="card-expiration" placeholder="03"
+                                    maxlength="2" oninput="copyCardMonth()"
+                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                    onkeyup="validateMonth()" autocomplete="off" required>
+                                <span class="error-msg" id="monthError"></span>
+                            </div>
+
+                            <div class="form-bottom__inputs-EXP">
+                                <input type="tel" id="cardExpirationYear" class="card-expiration" placeholder="26"
+                                    maxlength="2" oninput="copyCardYear()"
+                                    onkeypress="return event.charCode >= 48 && event.charCode <= 57"
+                                    onkeyup="validateYear()" autocomplete="off" required>
+                                <span class="error-msg" id="yearError"></span>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="form-bottom__CVC">
+                        <label for="cardCVC">CVC</label>
+                        <input type="tel" id="cardCVC" class="card-CVC" placeholder="e.g. 1234"
+                            onkeypress="return event.charCode >= 48 && event.charCode <= 57" maxlength="4"
+                            oninput="copyCardCVC()" onkeyup="validateCVC()" required>
+                        <span class="error-msg" id="CVCError"></span>
+                    </div>
+                </div>
+
+                <input type="submit" value="Submit" data-open-modal id="formButton" class="open-modal"></input>
+                <dialog class="modal">
+
+                </dialog>
+            </form>
+        </div>
+
+        <div class="message">
+            <div class="modal" id="success">
+                <img src="../images/icon-complete.svg">
+                <h1>THANK YOU!</h1>
+                <p>We've added your card details</p>
+                <button id="close-button" data-close-modal>Continue</button>
+            </div>
+            <div class="danger" id="danger">Fields can't be empty!</div>
+        </div>
+    </main>
+
+    <footer>
+        <p>Start Day/Time: 05/22/23 || Start Day/Time: 05/29/23</p>
+    </footer>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+</body>
+
+</html>
