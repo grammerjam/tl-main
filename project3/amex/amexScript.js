@@ -4,9 +4,8 @@ function copyCardName() {
 }
 
 function copyCardNumber() {
-  let text = document
-    .getElementById("cardNumber").value
-    // .value.replace(/^(\d{4})(\d{6})(\d{5})$/, "$1 $2 $3");
+  let text = document.getElementById("cardNumber").value;
+  // .value.replace(/^(\d{4})(\d{6})(\d{5})$/, "$1 $2 $3");
   document.getElementById("copiedNumber").innerHTML = text;
 }
 
@@ -53,7 +52,7 @@ function validateNumber() {
     return false;
   }
   // checks if card number is more or less than 15
-  if (number.length != 15) {
+  if (number.length != 17) {
     cardNumberError.innerHTML = "Card number should be 15 digits";
     return false;
   }
