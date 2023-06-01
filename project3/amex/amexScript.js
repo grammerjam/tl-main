@@ -5,8 +5,8 @@ function copyCardName() {
 
 function copyCardNumber() {
   let text = document
-    .getElementById("cardNumber")
-    .value.replace(/^(\d{4})(\d{6})(\d{5})$/, "$1 $2 $3");
+    .getElementById("cardNumber").value
+    // .value.replace(/^(\d{4})(\d{6})(\d{5})$/, "$1 $2 $3");
   document.getElementById("copiedNumber").innerHTML = text;
 }
 
@@ -219,4 +219,11 @@ openModal.addEventListener("click", () => {
 
 closeModal.addEventListener("click", () => {
   modal.close();
+});
+
+var cleave = new Cleave(".card-number", {
+  creditCard: true,
+  onCreditCardTypeChanged: function (type) {
+    // update UI ...
+  },
 });

@@ -32,13 +32,13 @@
 //   return true;
 // }
 
-// format AMEX card
+// format card spacing
 
-// var cleave = new Cleave('.card-number', {
+// var cleave = new Cleave(".card-number", {
 //   creditCard: true,
 //   onCreditCardTypeChanged: function (type) {
 //     // update UI ...
-//   }
+//   },
 // });
 
 function copyCardName() {
@@ -170,32 +170,38 @@ function validateCVC() {
 function validateForm(event) {
   event.preventDefault(); // Prevent default form submission behavior
 
-  const cardHolderName = document.getElementById('cardHolderName');
-  const cardNumber = document.getElementById('cardNumber');
-  const expirationMonth = document.getElementById('cardExpirationMonth');
-  const expirationYear = document.getElementById('cardExpirationYear');
-  const cardCVC = document.getElementById('cardCVC');
+  const cardHolderName = document.getElementById("cardHolderName");
+  const cardNumber = document.getElementById("cardNumber");
+  const expirationMonth = document.getElementById("cardExpirationMonth");
+  const expirationYear = document.getElementById("cardExpirationYear");
+  const cardCVC = document.getElementById("cardCVC");
 
-  const danger = document.getElementById('danger');
-  const success = document.getElementById('success');
+  const danger = document.getElementById("danger");
+  const success = document.getElementById("success");
 
-  if (cardHolderName.value === '' || cardNumber.value === '' || expirationMonth.value === '' || expirationYear.value === '' || cardCVC.value === '') {
-    danger.style.display = 'block';
+  if (
+    cardHolderName.value === "" ||
+    cardNumber.value === "" ||
+    expirationMonth.value === "" ||
+    expirationYear.value === "" ||
+    cardCVC.value === ""
+  ) {
+    danger.style.display = "block";
   } else {
     setTimeout(() => {
-      cardHolderName.value = '';
-      cardNumber.value = '';
-      expirationMonth.value = '';
-      expirationYear.value = '';
-      cardCVC.value = '';
+      cardHolderName.value = "";
+      cardNumber.value = "";
+      expirationMonth.value = "";
+      expirationYear.value = "";
+      cardCVC.value = "";
     }, 4000);
 
-    success.style.display = 'block';
+    success.style.display = "block";
   }
 
   setTimeout(() => {
-    danger.style.display = 'none';
-    success.style.display = 'none';
+    danger.style.display = "none";
+    success.style.display = "none";
   }, 8000);
 }
 
@@ -208,27 +214,33 @@ const cardCVC = document.getElementById("cardCVC");
 function validateForm(event) {
   event.preventDefault(); // Prevent default form submission behavior
 
-  const cardHolderName = document.getElementById('cardHolderName');
-  const cardNumber = document.getElementById('cardNumber');
-  const expirationMonth = document.getElementById('cardExpirationMonth');
-  const expirationYear = document.getElementById('cardExpirationYear');
-  const cardCVC = document.getElementById('cardCVC');
+  const cardHolderName = document.getElementById("cardHolderName");
+  const cardNumber = document.getElementById("cardNumber");
+  const expirationMonth = document.getElementById("cardExpirationMonth");
+  const expirationYear = document.getElementById("cardExpirationYear");
+  const cardCVC = document.getElementById("cardCVC");
 
-  const danger = document.getElementById('danger');
-  const success = document.getElementById('success');
+  const danger = document.getElementById("danger");
+  const success = document.getElementById("success");
 
-  if (cardHolderName.value === '' || cardNumber.value === '' || expirationMonth.value === '' || expirationYear.value === '' || cardCVC.value === '') {
-    danger.style.display = 'block';
+  if (
+    cardHolderName.value === "" ||
+    cardNumber.value === "" ||
+    expirationMonth.value === "" ||
+    expirationYear.value === "" ||
+    cardCVC.value === ""
+  ) {
+    danger.style.display = "block";
   } else {
     setTimeout(() => {
-      cardHolderName.value = '';
-      cardNumber.value = '';
-      expirationMonth.value = '';
-      expirationYear.value = '';
-      cardCVC.value = '';
+      cardHolderName.value = "";
+      cardNumber.value = "";
+      expirationMonth.value = "";
+      expirationYear.value = "";
+      cardCVC.value = "";
     }, 8000);
 
-    success.style.display = 'block';
+    success.style.display = "block";
   }
 
   // onEvent("cancelButton", "click", function(){
@@ -236,22 +248,22 @@ function validateForm(event) {
   //     clearTimeout(t);
 
   setTimeout(() => {
-    danger.style.display = 'none';
-    success.style.display = 'none';
+    danger.style.display = "none";
+    success.style.display = "none";
   }, 9000);
 }
 
-const openModal = document.querySelector("[data-open-modal]")
-const closeModal = document.querySelector("[data-close-modal]")
-const modal = document.querySelector("[data-modal]")
+const openModal = document.querySelector("[data-open-modal]");
+const closeModal = document.querySelector("[data-close-modal]");
+const modal = document.querySelector("[data-modal]");
 
 openModal.addEventListener("click", () => {
-  modal.showModal()
-})
+  modal.showModal();
+});
 
 closeModal.addEventListener("click", () => {
-  modal.close()
-})
+  modal.close();
+});
 
 // form.addEventListener("submit", (event) => {
 //   if (
@@ -268,5 +280,3 @@ closeModal.addEventListener("click", () => {
 //     event.preventDefault();
 //   }
 // });
-
-
