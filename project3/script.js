@@ -34,12 +34,12 @@
 
 // format AMEX card
 
-var cleave = new Cleave('.card-number', {
-  creditCard: true,
-  onCreditCardTypeChanged: function (type) {
-    // update UI ...
-  }
-});
+// var cleave = new Cleave('.card-number', {
+//   creditCard: true,
+//   onCreditCardTypeChanged: function (type) {
+//     // update UI ...
+//   }
+// });
 
 function copyCardName() {
   let text = document.getElementById("cardHolderName").value;

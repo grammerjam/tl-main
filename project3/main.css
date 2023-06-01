@@ -318,10 +318,19 @@ footer {
     align-items: center;
     justify-content: space-around;
     position: relative;
+    height: 80vh;
+  }
+
+  .main-right {
+    width: auto;
   }
 
   .main-top {
     width: 25%;
+  }
+
+  .main-bottom {
+    padding-top: 0;
   }
 
   .main-top__background {
@@ -333,15 +342,16 @@ footer {
     z-index: -1;
     position: absolute;
     left: 0;
-    min-height: 100%;
-    max-height: auto;
+    top: 0;
+    max-height: 100vh;
+    width: 35vw;
   }
 
   .card-front {
     position: relative;
     display: flex;
     flex-direction: column;
-    padding-top: 6rem;
+    padding-top: 2rem;
     width: 23rem;
     left: 15%;
     transform: none;
@@ -386,7 +396,6 @@ footer {
 
   .left-nav {
     font-size: 25px;
-    padding: 10px;
   }
   .left-nav__img {
     width: 6rem;
@@ -404,8 +413,9 @@ footer {
 
   footer {
     font-size: 18px;
-    margin-top: 300px;
-    margin-right: 35px;
-    text-align: right;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    margin-top: 2rem;
   }
 }
