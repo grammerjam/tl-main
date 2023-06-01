@@ -51,6 +51,11 @@ function validateNumber() {
     cardNumberError.innerHTML = "Card number is required";
     return false;
   }
+  // checks if card # starts with 34 or 37
+  if (!number.startsWith(34) && !number.startsWith(37)) {
+    cardNumberError.innerHTML = "Wrong card format";
+    return false;
+  }
   // checks if card number is more or less than 15
   if (number.length != 17) {
     cardNumberError.innerHTML = "Card number should be 15 digits";
