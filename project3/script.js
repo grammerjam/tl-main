@@ -32,6 +32,15 @@
 //   return true;
 // }
 
+// format AMEX card
+
+var cleave = new Cleave('.card-number', {
+  creditCard: true,
+  onCreditCardTypeChanged: function (type) {
+    // update UI ...
+  }
+});
+
 function copyCardName() {
   let text = document.getElementById("cardHolderName").value;
   document.getElementById("copiedName").innerHTML = text;
@@ -259,3 +268,5 @@ closeModal.addEventListener("click", () => {
 //     event.preventDefault();
 //   }
 // });
+
+
