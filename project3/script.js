@@ -70,100 +70,139 @@ function copyCardCVC() {
 }
 
 const nameError = document.getElementById("nameError");
+let cardHolderNameInput = document.getElementById("cardHolderName");
 
 function validateName() {
   let name = document.getElementById("cardHolderName").value;
   // checks if there is a written name
   if (name.length == 0) {
     nameError.innerHTML = " Name is required";
+    cardHolderNameInput.classList.add("invalid");
+
     return false;
   }
   // checks if it is a full name with alphabetic characters
   if (!name.match(/^[^\s]+\s[^\s]+$/)) {
     nameError.innerHTML = "Write full name";
+    cardHolderNameInput.classList.add("invalid");
+
     return false;
   }
   nameError.innerHTML = "";
+  cardHolderNameInput.classList.remove("invalid");
+
   return true;
 }
 
 const cardNumberError = document.getElementById("numberError");
+let cardNumberInput = document.getElementById("cardNumber");
 
 function validateNumber() {
   let number = document.getElementById("cardNumber").value;
   // checks if card number is empty
   if (number.length == 0) {
     cardNumberError.innerHTML = "Card number is required";
+    cardNumberInput.classList.add("invalid");
+
     return false;
   }
   // checks if card number is more or less than 16
   if (number.length != 16) {
     cardNumberError.innerHTML = "Card number should be 16 digits";
+    cardNumberInput.classList.add("invalid");
+
     return false;
   }
   cardNumberError.innerHTML = "";
+  cardNumberInput.classList.remove("invalid");
+
   return true;
 }
 
 const monthError = document.getElementById("monthError");
+let cardMonthInput = document.getElementById("cardExpirationMonth");
 
 function validateMonth() {
   let month = document.getElementById("cardExpirationMonth").value;
   // checks if card month is empty
   if (month.length == 0) {
     monthError.innerHTML = "Cannot be blank";
+    cardMonthInput.classList.add("invalid");
+
     return false;
   }
   // checks if card month is more or less than 2
   if (month.length != 2) {
     monthError.innerHTML = "Must be 2 digits";
+    cardMonthInput.classList.add("invalid");
+
     return false;
   }
   if (!month.match(/^0[1-9]|1[0-2]$/)) {
     monthError.innerHTML = "Incorrect Format";
+    cardMonthInput.classList.add("invalid");
+
     return false;
   }
   monthError.innerHTML = "";
+  cardMonthInput.classList.remove("invalid");
+
   return true;
 }
 
 const yearError = document.getElementById("yearError");
+let cardYearInput = document.getElementById("cardExpirationYear");
 
 function validateYear() {
   let year = document.getElementById("cardExpirationYear").value;
   // checks if card year is empty
   if (year.length == 0) {
     yearError.innerHTML = "Cannot be blank";
+    cardYearInput.classList.add("invalid");
+
     return false;
   }
   // checks if card year is more or less than 2
   if (year.length != 2) {
     yearError.innerHTML = "Must be 2 digits";
+    cardYearInput.classList.add("invalid");
+
     return false;
   }
   if (!year.match(/^(?:2[3-9]|[3-9][0-9]|33)$/)) {
     yearError.innerHTML = "Incorrect Format";
+    cardYearInput.classList.add("invalid");
+
     return false;
   }
   yearError.innerHTML = "";
+  cardYearInput.classList.remove("invalid");
+
   return true;
 }
 
 const CVCError = document.getElementById("CVCError");
+let cardCVCInput = document.getElementById("cardCVC");
 
 function validateCVC() {
   let CVC = document.getElementById("cardCVC").value;
   // checks if card cvc is empty
   if (CVC.length == 0) {
     CVCError.innerHTML = "Cannot be blank";
+    cardCVCInput.classList.add("invalid");
+
     return false;
   }
   // checks if card CVC is more or less than 3
   if (CVC.length != 3) {
     CVCError.innerHTML = "Must be 3 digits";
+    cardCVCInput.classList.add("invalid");
+
     return false;
   }
   CVCError.innerHTML = "";
+  cardCVCInput.classList.remove("invalid");
+
   return true;
 }
 

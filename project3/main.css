@@ -197,7 +197,7 @@ input {
   border: solid 1px hsl(270, 3%, 87%);
 }
 
-input:invalid {
+.invalid {
   border: 1px solid hsl(0, 100%, 66%);
 }
 
